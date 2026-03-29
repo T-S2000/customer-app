@@ -1,0 +1,28 @@
+const mongoose = require("mongoose");
+
+const CustomerSchema = mongoose.Schema(
+    {
+        date: {
+            type: Date,
+            required: true
+        },
+        name: {
+            type: String,
+            required: true
+        },
+        email: {
+            type: String,
+            required: true
+        },
+        phone: {
+            type: String,
+            required: true
+        },
+
+    }
+);
+
+
+const Customer = mongoose.model('customer', CustomerSchema);
+
+module.exports = Customer;
