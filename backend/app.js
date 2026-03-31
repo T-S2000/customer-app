@@ -6,6 +6,8 @@ const cors = require("cors");
 
 const PORT = 8080;
 
+require("dotenv").config();
+
 app.use(cors());
 
 app.use(express.json());
@@ -30,7 +32,7 @@ app.listen(PORT, (err) => {
 
 async function main() {
     try {
-        const connectionString = "mongodb+srv://tarun:tarun@cluster0.rh15hs0.mongodb.net/?appName=Cluster0";
+        const connectionString = process.env.MONGO_URI;
 
         await mongoose.connect(connectionString, {
             family: 4
